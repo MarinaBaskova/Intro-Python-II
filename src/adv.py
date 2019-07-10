@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -38,7 +38,8 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
+player1 = Player("Player1", room["outside"])
+# print(f'Player Name: {player1.name}, Current room: {player1.current_room.name} and Room Description: {player1.current_room.description}')
 # Write a loop that:
 #
 # * Prints the current room name
@@ -49,3 +50,12 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+while True:
+    player1.get_current_direction()
+    cardinal_direction = ["n", "s", "e", "w"]
+    user_input = input("Enter direction to move:")
+    if(user_input == "q"):
+        print("You quit the game")
+        exit()
+    if (user_input in cardinal_direction):
+        player1.move(user_input)
