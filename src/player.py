@@ -17,7 +17,7 @@ class Player:
 
     def print_direction(self, direction):
         print(
-            f"End of room, change your direction. Stop moving to {direction.upper()}")
+            f"End of room, change your direction.\nStop moving to {direction.upper()}")
 
     def get_current_direction(self):
         print(f'Current room: {self.current_room.name}')
