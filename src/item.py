@@ -10,3 +10,9 @@ class Item:
         \n{self.name}
         \n   {self.description}\n"""
         return str
+
+    def on_take(self):
+        print(f'You took {self.name}')
+
+    def on_drop(self):
+        print(f"You drop {self.name}")

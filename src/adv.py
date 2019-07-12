@@ -93,7 +93,6 @@ while True:
         else:
             print("Wrong item")
     elif (v == "drop"):
-        # remove item from room item
         player1.drop_item(o)
     elif (v == "i"):
         player1.print_inventory()

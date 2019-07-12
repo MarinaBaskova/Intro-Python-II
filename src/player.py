@@ -43,8 +43,9 @@ class Player:
         self.inventory.append(result[0])
         self.current_room.remove_item(result[0])
 
-        print("You picked up:\n  " +
-              ", ".join([item.name for item in self.inventory]) + "\n")
+        # print("You picked up:\n  " +
+        #       ", ".join([item.name for item in self.inventory]) + "\n")
+        result[0].on_take()
 
     def drop_item(self, item):
         def filter_items(element):
@@ -56,5 +57,6 @@ class Player:
 
         self.current_room.add_item(result[0])
         self.inventory.remove(result[0])
+        result[0].on_drop()
         self.print_inventory()
         self.current_room.get_items()
